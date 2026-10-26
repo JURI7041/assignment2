@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse the movies now showing, with session times and ticket prices.">
+    <meta name="keywords" content="movies tickets booking">
+    <meta name="author" content="Juri Alodhailah">
+    
+    <title>MOVIES | FILM FINDER</title>
+    <!-- css and scripts are linked on every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- HEADER - logo, site name and main navigation (same on every page) -->
+    <header>
+        <img src="images/logo.png" alt="Film Finder logo">
+        <h1>FILM FINDER</h1>
+
+        <nav>
+            <ul>
+                <!-- class="active" highlights the page the user is on -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html" class="active">Movies</a></li>
+                <li><a href="recommend.html">Recommendations</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+                <li><a href="watchlist.html">Watchlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- movie list: one card per movie (poster, details, description, sessions, buttons) -->
+        <section id="movie-list">
+            <h2>Now showing</h2>
+            <p>Choose a movie below to book tickets, or save it to your watchlist for later.</p>
+
+            <!-- movie 1-->
+            <article class="movie-card" id="movie1">
+                <img src="images/movie1.jpg" alt="Poster for The Maze Runner">
+                <div class="movie-info">
+                    <h3>The Maze Runner</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Action</strong></li>
+                        <li><strong>Age rating: PG-13</strong></li>
+                        <li><strong>Movie length: 1 Hour 53 Minutes (113 minutes)</strong></li>
+                        <li><strong>Ticket price: $18</strong></li>
+                    </ul>
+                    <p>Thomas is a teenager who wakes up in an elevator with no memory of his past. He finds himself 
+                        in a green arena surrounded by massive stone walls. Other teens have built a small community there, 
+                        but each night the walls shift, and frightening creatures guard a dangerous maze. Thomas doesn’t want 
+                        to follow the rules and decides to look for a way out. The story is fast-paced, tense, and full of 
+                        surprises.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Monday, 2:40 pm</li>
+                        <li>Wednesday, 7:00 pm</li>
+                        <li>Sunday, 5:40 pm</li>
+                    </ul>
+
+                    <!-- ?movie=Title is read by script.js to pre-fill the booking page -->
+                    <a href="booking.html?movie=The+Maze+Runner" class="button">Book this movie</a>                 
+                    
+                    <!-- the data- attributes are saved to the watchlist by script.js -->
+                    <button type="button" class="watch-btn" 
+                        data-movie="The Maze Runner" 
+                        data-genre="Action" 
+                        data-rating="PG-13" 
+                        data-price="18" 
+                        data-image="images/movie1.jpg">Add to Watchlist</button> 
+                </div>
+            </article>
+
+            <!-- movie 2-->
+            <article class="movie-card" id="movie2">
+                <img src="images/movie2.jpg" alt="Poster for White Chicks">
+                <div class="movie-info">
+                    <h3>White Chicks</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Comedy</strong></li>
+                        <li><strong>Age rating: PG-13 </strong></li>
+                        <li><strong>Movie length: 1 Hour 49 Minutes (109 minutes)</strong></li>
+                        <li><strong>Ticket price: $22 </strong></li>
+                    </ul>
+                    <p>Two FBI agent brothers make a big mistake on an important case. To save their jobs, 
+                        they are assigned to protect two rich hotel heiresses from a kidnapping plot. When 
+                        the sisters get injured, the brothers decide to disguise themselves as the heiresses 
+                        and join a fancy weekend trip. Their secret leads to lots of mix-ups and constant jokes. 
+                        This is a loud, silly comedy that’s best watched with friends.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Tuesday, 4:00 pm</li>
+                        <li>Thursday, 9:30 pm</li>
+                        <li>Saturday, 7:40 pm</li>
+                    </ul>
+                    <a href="booking.html?movie=White+Chicks" class="button">Book this movie</a>
+                
+                    <button type="button" class="watch-btn" 
+                        data-movie="White Chicks" 
+                        data-genre="Comedy" 
+                        data-rating="PG-13" 
+                        data-price="22" 
+                        data-image="images/movie2.jpg">Add to Watchlist</button> 
+          
+                </div>
+            </article>
+
+            <!-- movie 3-->
+            <article class="movie-card" id="movie3">
+                <img src="images/movie3.jpg" alt="Poster for Lion King">
+                <div class="movie-info">
+                    <h3>Lion King</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Animation</strong></li>
+                        <li><strong>Age rating: G</strong></li>
+                        <li><strong>Movie length: 1 Hour 28 Minutes (88 minutes)</strong></li>
+                        <li><strong>Ticket price: $12</strong></li>
+                    </ul>
+                    <p>Young lion cub Simba is born to be king of the African savanna, but his uncle Scar 
+                        has other plans. After a tragedy that Simba wrongly blames on himself, he runs away 
+                        and grows up with two carefree friends who teach him to forget his worries. Years 
+                        later, Simba must face his past and decide whether to return and reclaim his home. A 
+                        moving musical about family, courage, and growing up.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Saturday, 10:30 am</li>
+                        <li>Sunday, 2:00 pm</li>
+                        <li>Friday, 5:40 pm</li>
+                    </ul>
+                    <a href="booking.html?movie=Lion+King" class="button">Book this movie</a>
+                    <button type="button" class="watch-btn" 
+                        data-movie="Lion King" 
+                        data-genre="Animation" 
+                        data-rating="G" 
+                        data-price="12" 
+                        data-image="images/movie3.jpg">Add to Watchlist</button> 
+                </div>
+            </article>
+
+            <!-- movie 4-->
+            <article class="movie-card" id="movie4">
+                <img src="images/movie4.jpg" alt="Poster for The Godfather">
+                <div class="movie-info">
+                    <h3>The Godfather</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Drama</strong></li>
+                        <li><strong>Age rating: MA15+</strong></li>
+                        <li><strong>Movie length: 2 Hours 55 Minutes (175 minutes)</strong></li>
+                        <li><strong>Ticket price: $24</strong></li>
+                    </ul>
+                    <p>In 1940s New York, Vito Corleone leads a powerful crime family and is highly respected. After 
+                        someone tries to kill him and he is badly hurt, his youngest son Michael, a war hero who never 
+                        wanted to join the family business, is pulled into a world of violence, loyalty, and revenge. 
+                        This is a slow-paced, well-acted classic about family and the price of ambition. It is recommended 
+                        for mature audiences.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Wednesday, 5:30 pm</li>
+                        <li>Thursday, 7:00 pm</li>
+                        <li>Sunday, 4:40 pm</li>
+                    </ul>
+                    <a href="booking.html?movie=The+Godfather" class="button">Book this movie</a>
+                    <button type="button" class="watch-btn" 
+                        data-movie="The Godfather" 
+                        data-genre="Drama" 
+                        data-rating="MA15+" 
+                        data-price="24" 
+                        data-image="images/movie4.jpg">Add to Watchlist</button> 
+                </div>
+            </article>
+
+            <!-- movie 5-->
+            <article class="movie-card" id="movie5">
+                <img src="images/movie5.jpg" alt="Poster for How to Lose a Guy in 10 Days">
+                <div class="movie-info">
+                    <h3>How to Lose a Guy in 10 Days</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Romance</strong></li>
+                        <li><strong>Age rating: PG-13</strong></li>
+                        <li><strong>Movie length: 1 Hour 56 Minutes (116 minutes)</strong></li>
+                        <li><strong>Ticket price: $22</strong></li>
+                    </ul>
+                    <p>A magazine writer agrees to write an article about the mistakes women make that drive 
+                        men away, so she tries to lose a man in just ten days. At the same time, an advertising 
+                        executive bets his coworkers that he can make any woman fall in love with him in ten days. 
+                        Neither knows what the other is up to, and as they carry out their plans, they start to 
+                        care for each other. This is a charming romantic comedy, perfect for a date night.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Monday, 6:30 pm</li>
+                        <li>Thursday, 8:40 pm</li>
+                        <li>Friday, 9:00 pm</li>
+                    </ul>
+                    <a href="booking.html?movie=How+to+Lose+a+Guy+in+10+Days" class="button">Book this movie</a>
+                    <button type="button" class="watch-btn" 
+                        data-movie="How to Lose a Guy in 10 Days" 
+                        data-genre="Romance" 
+                        data-rating="PG-13" 
+                        data-price="22" 
+                        data-image="images/movie5.jpg">Add to Watchlist</button> 
+                </div>
+            </article>
+
+            <!-- movie 6-->
+            <article class="movie-card" id="movie6">
+                <img src="images/movie6.jpg" alt="Poster for Obsession">
+                <div class="movie-info">
+                    <h3>Obsession</h3>
+                    <ul class="movie-details">
+                        <li><strong>Genre: Horror</strong></li>
+                        <li><strong>Age rating: R</strong></li>
+                        <li><strong>Movie length: 1 Hour 49 Minutes (109 minutes)</strong></li>
+                        <li><strong>Ticket price: $22</strong></li>
+                    </ul>
+                    <p>This is a tense psychological horror about a relationship that looks normal at first, but one person’s 
+                        devotion becomes dangerous. The story builds slowly, with a creepy mood and sudden scares that keep viewers 
+                        nervous until the end. This movie isn’t for children or sensitive viewers, but it’s a great pick for anyone 
+                        who likes being scared in a dark theatre with friends.</p>
+
+                    <h4>Sessions</h4>
+                    <ul class="sessions">
+                        <li>Wednesday, 4:30 pm</li>
+                        <li>Friday, 8:40 pm</li>
+                        <li>Saturday, 9:00 pm</li>
+                    </ul>
+                    <a href="booking.html?movie=Obsession" class="button">Book this movie</a>
+                    <button type="button" class="watch-btn" 
+                        data-movie="Obsession" 
+                        data-genre="Horror" 
+                        data-rating="R" 
+                        data-price="22" 
+                        data-image="images/movie6.jpg">Add to Watchlist</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- footer-->
+    <footer>
+        <p>&copy;2026 Film Finder. Created by Juri Alodhailah</p>
+    </footer>
+
+</body>
+</html>

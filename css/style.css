@@ -1,0 +1,427 @@
+/*--- COLOURS ---*/
+:root {
+    --dark: #2B2825;        /*header , footer*/
+    --light-bg: #F7F4EB; 
+    --white: #F7F4EB;
+    --sepia: #E8DFD1;   /* section background */
+    --text: #2B2825;
+    --accent: #800020;      /* buttons, errors*/
+    --accent-dark: #5C0017;     /*button hover*/
+    --highlight: #C5A059;       /*current page on nav*/
+    --link: #800020; 
+    --border: #C9BBA3;
+}
+
+/*--- BASE STYLES ---*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;    /*16px*/
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--light-bg);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--- HEADER AND NAV ---*/
+
+header {
+    background-color: var(--dark);
+    border-bottom: 4px solid var(--highlight);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+
+header img {
+    width: 80px;        /*logo size*/
+    height: auto;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0.25rem 0 0.75rem;
+    padding: 1rem;
+    font-size: 1.75rem;
+    color: var(--light-bg);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;     /* on mobile the links are stacked in a column */ 
+    gap: 0.25rem;
+}
+
+nav a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+nav a:hover, nav a:focus {
+    background-color: #4A4038;
+    text-decoration: underline;
+}
+
+nav a:focus{
+    outline-color: var(--highlight);
+}
+
+/* highlights the page the user is currently on (class = "active" is on html)*/
+nav a.active {
+    background-color: var(--highlight);
+    color: var(--dark);
+    font-weight: bolder;
+}
+
+/*--- MAIN CONTENT , HEADINGS , LINKS ---*/
+
+main {
+    padding: 1rem;
+    max-width: 70rem;
+    margin: 0 auto;     /* centers the content on wide screens*/
+}
+
+section {
+    background-color: var(--sepia);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+    margin: 0.75rem 0 0.25rem;
+}
+
+a {
+    color: var(--link);
+}
+
+figure {
+    margin: 1rem 0;
+}
+
+figure img {
+    display: block;
+    max-width: 30rem;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.875rem; 
+    padding: 20px;
+}
+
+main a:not(.button):hover,
+main a:not(.button):focus {
+    color: rgb(238, 32, 32);
+}
+
+/*--- BUTTONS ---*/
+.button , button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--white);
+    background-color: var(--accent);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover, .button:focus, 
+button:hover, button:focus {
+    background-color: var(--accent-dark);
+}
+
+/*--- MOVIE CARDS ---*/
+.movie-card {
+    border: 1px solid var(--border); 
+    border-radius: 8px;
+    background-color: var(--white); 
+    margin-bottom: 1.25rem;
+    overflow: hidden;   /* keeps the poster inside the rounded corners */
+}
+
+/* poster is centred above the movie information */
+.movie-card img {
+    display: block;
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
+    margin: 1rem auto 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    background-color: var(--border);
+}
+
+.movie-info {
+    padding: 1rem;
+}
+
+.movie-details, .sessions {
+    margin: 0 0 0.75rem; 
+    padding-left: 1.25rem;
+}
+
+/* "Book this movie", "Add to Watchlist" and "Remove" all get the same size */
+.movie-info .button,
+.movie-info button {  
+    width: 12rem;
+    padding: 0.6rem 0.5rem;
+    font-size: 1rem;     
+    line-height: 1.4;     
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+.remove-btn {
+    background-color: #4A4038;
+}
+
+/*--- FORM ---*/
+form {
+    max-width: 45rem;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin: 0 0 1.25rem;
+    padding: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+/* on mobile the label sits above its input */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-row label {
+    font-weight: bold;
+    margin-bottom:0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.55rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #6F6254;
+    border-radius: 4px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 0.25rem 0 0.75rem;
+}
+
+/* clear outline so keyboard users can see where they are */
+input:focus,
+select:focus,
+textarea:focus,
+a:focus,
+button:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+input[readonly]{
+    background-color: var(--sepia);
+}
+
+.error {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.error:empty {
+    display: none;
+}
+
+/*--- ERROR POP-UP (built by showErrors() in script.js) ---*/
+#scrnOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);   /* dark screen that blocks the form */
+    z-index: 100;
+    visibility: hidden;                     /* script.js sets it to visible */
+}
+ 
+#errWin {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    position: fixed;
+    top: 50%;                   /* script.js sets margin-top to centre it vertically */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 28rem;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: var(--white);
+    border: 3px solid var(--accent);
+    border-radius: 8px;
+    z-index: 101;
+    display: none;
+}
+ 
+#errWin ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+/*--- FOOTER ---*/
+footer {
+    background-color: var(--dark);
+    color: var(--white); 
+    text-align: center;
+    padding: 1rem; 
+    margin-top: 2rem;
+    border-top: 4px solid var(--highlight);
+}
+
+footer p {
+    margin: 0; 
+    font-size: 1rem;
+}
+
+/* used to hide things until script.js shows them */
+.hidden {
+    display: none;
+}
+
+/*--- TABLET (768px and up)---*/
+@media (min-width: 768px) {
+
+    /* logo, title and nav sit in one row */
+    header {
+        display: flex;
+        flex-wrap: wrap; 
+        align-items: center; 
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    header h1 {
+        margin: 0 auto 0 1rem;
+    }
+
+    nav ul {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+    }
+
+/*--- FORM ROW ---*/
+    /* form rows: label on the left, input on the right */
+    .form-row{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .form-row label {
+        width: 13rem;
+        font-weight: bold;
+        margin-bottom:0.25rem;
+    }
+
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row input[type="tel"],
+    .form-row input[type="password"],
+    .form-row input[type="number"],
+    .form-row input[type="datetime-local"],
+    .form-row select,
+    .form-row textarea {
+        width: calc(100% - 13rem);
+    }
+
+    .form-row .error {
+        width: 100%;
+        padding-left: 13rem;
+    }
+}
+
+/*--- DESKTOP (1024 and up)---*/
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    /* movie cards and watchlist cards in two columns */
+    #movie-list,
+    #watchlistItems {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    /* the heading and intro text span both columns */
+    #movie-list > h2,
+    #movie-list > p {
+        grid-column: 1 / -1;
+        margin: 0;
+    }
+
+    #movie-list .movie-card,
+    #watchlistItems .movie-card {
+        margin-bottom: 0;
+    }
+
+    header img {
+        width: 100px;
+    }
+}

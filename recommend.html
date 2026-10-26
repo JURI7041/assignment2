@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Answer three quick questions about genre, age group and viewing preference and Film Finder will recommend a movie.">
+    <meta name="keywords" content="movies tickets booking">
+    <meta name="author" content="Juri Alodhailah">
+    
+    <title>RECOMMENDATIONS | FILM FINDER</title>
+    <!-- css and scripts are linked on every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- HEADER - logo, site name and main navigation (same on every page) -->
+    <header>
+        <img src="images/logo.png" alt="Film Finder logo">
+        <h1>FILM FINDER</h1>
+
+        <nav>
+            <ul>
+                <!-- class="active" highlights the page the user is on -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="recommend.html" class="active">Recommendations</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+                <li><a href="watchlist.html">Watchlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- recommendation form: genre, age group and viewing preference -->
+        <section id="recommend-form-section">
+            <h2>Find Your Movie</h2>
+            <p>Answer a few questions and we will suggest a movie based on your answers.</p>
+        
+            <form id="recommendForm">
+                <!-- question 1: preferred genre -->
+                <div class="form-row">
+                    <label for="genre">Preferred genre</label>
+                    <select id="genre" name="genre">
+                        <option value="">--Select a genre--</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Horror">Horror</option>
+                    </select>
+                </div>
+
+                <!-- question 2: age group -->
+                <fieldset>
+                    <legend>Age group</legend>
+                    <input type="radio" id="ageChild" name="ageGroup" value="Child">
+                    <label for="ageChild">Child</label>
+
+                    <input type="radio" id="ageTeen" name="ageGroup" value="Teen">
+                    <label for="ageTeen">Teen</label>
+    
+                    <input type="radio" id="ageAdult" name="ageGroup" value="Adult">
+                    <label for="ageAdult">Adult</label>
+                </fieldset>
+
+                <!-- question 3: viewing preference -->
+                <div class="form-row">
+                    <label for="viewing">Viewing Preference</label>
+                    <select id="viewing" name="viewing">
+                        <option value="">--Select--</option>
+                        <option value="Family">Family</option>
+                        <option value="Date Night">Date Night</option>
+                        <option value="Friends">Friends</option>
+                        <option value="Solo">Solo</option>
+                    </select>
+                </div>
+
+                <!-- script.js writes a message here if a question is not answered -->
+                <p class="error" id="recommendError"></p>
+                <button type="submit">Recommend a Movie</button>
+            </form>
+        </section>
+
+        <!-- result: hidden until the user gets a recommendation (script.js fills it in) -->
+        <section id="recommend-result" class="hidden">
+            <h2>Your Recommendation</h2>
+            <h3 id="resultTitle">Your movie</h3>
+            <p id="resultReason"></p>
+
+            <!-- the link is updated by script.js so the movie is pre-filled on the booking page -->
+            <a id="resultBookLink" href="booking.html" class="button">Book this Movie</a>
+        </section>
+    </main>
+
+    <!-- footer-->
+    <footer>
+        <p>&copy;2026 Film Finder. Created by Juri Alodhailah</p>
+    </footer>
+
+</body>
+</html>

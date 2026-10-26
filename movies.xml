@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+    <movie>
+        <title>The Maze Runner</title>
+        <genre>Action</genre>
+        <rating>PG-13</rating>
+        <price>18.00</price>
+    </movie>
+    <movie>
+        <title>White Chicks</title>
+        <genre>Comedy</genre>
+        <rating>PG-13</rating>
+        <price>22.00</price>
+    </movie>
+    <movie>
+        <title>Lion King</title>
+        <genre>Animation</genre>
+        <rating>G</rating>
+        <price>12.00</price>
+    </movie>
+    <movie>
+        <title>The Godfather</title>
+        <genre>Drama</genre>
+        <rating>MA15+</rating>
+        <price>24.00</price>
+    </movie>
+    <movie>
+        <title>How to Lose a Guy in 10 Days</title>
+        <genre>Romance</genre>
+        <rating>PG-13</rating>
+        <price>22.00</price>
+    </movie>
+    <movie>
+        <title>Obsession</title>
+        <genre>Horror</genre>
+        <rating>R</rating>
+        <price>22.00</price>
+    </movie>
+</movies>

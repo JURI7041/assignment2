@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a Film Finder account">
+    <meta name="keywords" content="movies tickets booking">
+    <meta name="author" content="Juri Alodhailah">
+    
+    <title>REGISTER | FILM FINDER</title>
+    <!-- css and scripts are linked on every page -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- HEADER - logo, site name and main navigation (same on every page) -->
+    <header>
+        <img src="images/logo.png" alt="Film Finder logo">
+        <h1>FILM FINDER</h1>
+
+        <nav>
+            <ul>
+                <!-- class="active" highlights the page the user is on -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="recommend.html">Recommendations</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+                <li><a href="watchlist.html">Watchlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Create an Account</h2>
+            <p>All fields are required.</p>
+
+            <!-- novalidate turns off the browser's own checks so script.js can validate instead -->           
+            <form id="regform" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                
+                <fieldset>
+                    <legend>Account Details</legend>
+                    <!--rule: min 5 characters, letters/numbers/underscores only-->
+                    <div class="form-row">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+
+                    <!--rule: valid email format-->
+                    <div class="form-row">
+                        <label for="email">Email Address</label>
+                        <input type="text" id="email" name="email">
+                    </div>
+
+                    <!--rule: digits only, 8-15-->
+                    <div class="form-row">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <!--rule: password min 10 characters with uppercase, lowercase, number and special character-->
+                    <div class="form-row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+
+                    <!--rule: passwords must match-->
+                    <div class="form-row">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                </fieldset>
+
+                <!-- gender: one must be chosen -->
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <input type="radio" id="genderM" name="gender" value="Male">
+                    <label for="genderM">Male</label>
+
+                    <input type="radio" id="genderF" name="gender" value="Female">
+                    <label for="genderF">Female</label>
+                </fieldset>
+
+                <!-- preferred genres: at least one must be ticked -->
+                <fieldset>
+                    <legend>Preferred Movie Genres</legend>
+                    <input type="checkbox" id="genAction" name="genres" value="Action">
+                    <label for="genAction">Action</label>
+
+                    <input type="checkbox" id="genComedy" name="genres" value="Comedy">
+                    <label for="genComedy">Comedy</label>
+
+                    <input type="checkbox" id="genAnimation" name="genres" value="Animation">
+                    <label for="genAnimation">Animation</label>
+
+                    <input type="checkbox" id="genDrama" name="genres" value="Drama">
+                    <label for="genDrama">Drama</label>
+
+                    <input type="checkbox" id="genRomance" name="genres" value="Romance">
+                    <label for="genRomance">Romance</label>
+
+                    <input type="checkbox" id="genHorror" name="genres" value="Horror">
+                    <label for="genHorror">Horror</label>
+                </fieldset>
+
+                <!-- country: one must be chosen -->               
+                <fieldset>
+                    <legend>Location</legend>
+                    <div class="form-row">
+                        <label for="country">Country / Region</label>
+                        <select name="country" id="country">
+                            <option value="">-- Select a country --</option>
+                            <option value="Australia">Australia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error" id="countryError"></span>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <p>&copy;2026 Film Finder. Created by Juri Alodhailah</p>
+    </footer>
+
+</body>
+</html>
